@@ -50,3 +50,46 @@
 .dark-mode-switch input:checked + label:before {
   transform: translateX(24px);
 }
+
+/* ------------------------------ */
+/* -----------Icons-------------- */
+/* ------------------------------ */
+
+/* Styling & transition for moon and sun icons */
+.dark-mode-switch .moon-icon,
+.dark-mode-switch .sun-icon {
+  position: absolute;
+  top: 6px;
+  width: 13px;
+  height: 13px;
+  background-size: cover;
+  transition: 0.3s ease;
+}
+
+/* Show sun icon on slide in in light mode */
+.dark-mode-switch .sun-icon {
+  background-image: url("../images/sun.png");
+  opacity: 1;
+  left: 6.499px;
+  transform: translateX(0);
+}
+
+/* Hide moon icon by default */
+.dark-mode-switch .moon-icon {
+  background-image: url("../images/moon.png");
+  opacity: 0;
+  left: 7px;
+}
+
+/* Hide sun icon when in dark mode */
+.dark-mode-switch input:checked + label .sun-icon {
+  opacity: 0;
+  left: 27px;
+}
+
+/* Show moon icon on slide in in dark mode */
+.dark-mode-switch input:checked + label .moon-icon {
+  opacity: 1;
+  left: 7px;
+  transform: translateX(24px);
+}
